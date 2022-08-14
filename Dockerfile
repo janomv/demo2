@@ -10,6 +10,10 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
 COPY package-lock.json ./
+
+RUN apk update
+RUN apk add git
+
 #RUN npm install --silent
 #RUN npm install react-scripts@3.4.1 -g --silent
 RUN npm install @aws-amplify/cli@7.6.5 -g --silent
